@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtOn</title>
+    <link rel="stylesheet" href="../ArtOn/css/common.css">
+    <link rel="stylesheet" href="../ArtOn/css/h_f.css">
+    <link rel="stylesheet" href="./deal.css">
+    <link rel="icon" href="../ArtOn/img/아트온 바비콘 로고.png">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="./js/deal.js"></script>
+    <script src="../ArtOn/js/h_f.js"></script>
+</head>
+<style>
+    /* position - sticky 이걸로 네비바 */
+</style>
+
+<body>
+    <div id="wrap">
+        <header class="header">
+            <div class="header_area">
+                <div class="logo"><a href="#"></a></div>
+                <ul class="menu_ul">
+                    <li>
+                        <a href="#">콘서트</a>
+                    </li>
+                    <li>
+                        <a href="#">뮤지컬</a>
+                    </li>
+                    <li>
+                        <a href="#">연극</a>
+                    </li>
+                    <li>
+                        <a href="#">클래식</a>
+                    </li>
+                    <li>
+                        <a href="#">전시</a>
+                    </li>
+                    <li>
+                        <a href="#">아동</a>
+                    </li>
+                </ul>
+                <div class="icon_list">
+                    <div class="search_area">
+                        <div class="search">
+                            <a href="#">
+                                <div class="search_bar">
+                                </div>
+                            </a>
+                        </div>
+                        <input id="srch_con" type="text" value="aaa">
+                    </div>
+                    <div class="icon_area">
+                        <div class="icon_sec">
+                            <a href="#">
+                                <div class="rank_img"></div>
+                                <span class="text">랭킹</span>
+                            </a>
+                        </div>
+                        <div class="icon_sec">
+                            <a href="#">
+                                <div class="login_img"></div>
+                                <div class="text">로그인</div>
+                            </a>
+                        </div>
+                        <div class="icon_sec">
+                            <a href="#">
+                                <div class="my_img"></div>
+                                <div class="text">마이페이지</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="contents_area">
+
+            <!--공연제목-->
+            <div class="title_section">
+                <div class="big_title">공연제목<부제목></div>
+                <p class="item_txt">
+                    <span class="item_date">2022-12-01 2022-12-31</span>
+                    <span>
+                        <span>서울숲</span>
+                        <img src="../ArtOn/img/location_icon.png" alt="" class="location_icon">
+                    </span>
+                </p>
+            </div>
+
+            <!--공연정보(포스터부분)-->
+            <div class="item_section">
+                <!--왼쪽-->
+                <div class="poster_box">
+                    <div class="img_box">
+                        <img src="./img/poster1.jpg" alt="">
+                    </div>
+                    <div class="like_box">
+                        <img src="./img/heart_icon.png" alt="">
+                        <span>777</span>
+                        <span>Likes</span>
+                    </div>
+                </div>
+                <!--오른쪽-->
+                <div class="info_box">
+                    <table class="item_table item_txt">
+                        <tbody>
+                            <tr>
+                                <td class="item_sec_name">등급</td>
+                                <td class="item_sec_body" id="contents_ratings">전체관람가</td>
+                            </tr>
+                            <tr>
+                                <td class="item_sec_name">관람시간</td>
+                                <td class="item_sec_body" id="running_time">총 100분(인터미션 없음)</td>
+                            </tr>
+                            <tr>
+                                <td class="item_sec_name">출연</td>
+                                <td class="item_sec_body" id="cast">--</td>
+                            </tr>
+                            <tr>
+                                <td class="item_sec_name">가격</td>
+                                <td class="item_sec_body" id="price">
+                                    <div class="price_box">
+                                        <div class="seat">A석<span class="seat_price">100,000원</span></div>
+                                        <div class="seat"><span class="seat_price"></span></div>
+                                        <div class="seat"><span class="seat_price"></span></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="item_sec_name">헤택</td>
+                                <td class="item_sec_body" id="discount_rate">제휴할인</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!--예매하기섹션-->
+            <div class="ticketing_section">
+                <div class="ticketing_process">
+                    <div class="choice_title">날짜선택</div>
+                    <div class="choice_title">회차선택</div>
+                    <div class="choice_title">남은 좌석수</div>
+                </div>
+                <div class="option_choice_sec">
+                    <div class="option_box">
+                        <button class="date_choice">2022-11-22</button>
+                        <button class="date_choice">2022-11-23</button>
+                        <button class="date_choice">2022-11-24</button>
+                    </div>
+                    <div class="option_box">
+                        <button class="time_choice"></button>
+                    </div>
+                    <div class="option_box">
+                        <button class="seat_choice"></button>
+                    </div>
+                </div>
+                <div class="ticketing_btn_sec">
+                    <button class="ticketing_btn">예매하기</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

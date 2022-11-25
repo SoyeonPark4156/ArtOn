@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="../ArtOn/css/common.css">
     <link rel="stylesheet" href="../ArtOn/css/h_f.css">
     <link rel="stylesheet" href="./css/deal.css">
-    <link rel="icon" href="../ArtOn/img/아트온 바비콘 로고.png">
+    <link rel="icon" href="./img/바비콘로고.png">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="./js/deal.js"></script>
-    <script src="../ArtOn/js/h_f.js"></script>
 </head>
 <style>
     /* position - sticky 이걸로 네비바 */
@@ -76,94 +75,151 @@
                 </div>
             </div>
         </header>
-        <div class="contents_area">
 
-            <!--공연제목-->
-            <div class="title_section">
-                <div class="big_title">MOONCHILD Live In Seoul w/ Special Guest : KIEFER [문차일드 서울라이브공연 / 특별초청재즈음악인 : 키퍼]</div>
-                <p class="item_txt">
-                    <span class="item_date">2022-12-01 2022-12-31</span>
-                    <span>
-                        <span>서울숲</span>
-                        <img src="./img/location_icon.png" alt="" class="location_icon">
-                    </span>
-                </p>
-            </div>
+        <main class="main">
+            <div class="contents_area">
+                <!-- 상단이동 아이콘 삽입 -->
+                <img src="./img/상단이동icon.png" alt="" class="btn_gotop">
+                <!--공연제목-->
+                <div class="title_section">
+                    <div class="big_title">MOONCHILD Live In Seoul w/ Special Guest : KIEFER [문차일드 서울라이브공연 / 특별초청재즈음악인 :
+                        키퍼]</div>
+                    <p class="item_txt">
+                        <span class="item_date">2022-12-01 2022-12-31</span>
+                        <span>
+                            <span>플러스씨어터 (구. 컬처스페이스 엔유)</span>
+                            <img src="./img/location_icon.png" alt="" class="location_icon">
+                        </span>
+                    </p>
+                </div>
 
-            <!--공연정보(포스터부분)-->
-            <div class="item_section">
-                <!--왼쪽-->
-                <div class="poster_box">
-                    <div class="img_box">
-                        <img src="./img/poster1.jpg" alt="">
+                <!--공연정보(포스터부분)-->
+                <div class="item_section">
+                    <!--왼쪽-->
+                    <div class="poster_box">
+                        <div class="img_box">
+                            <img src="./img/poster1.jpg" alt="">
+                        </div>
+                        <div class="like_box">
+                            <img src="./img/heart.png" alt="">
+                            <span>777</span>
+                            <span>Likes</span>
+                        </div>
                     </div>
-                    <div class="like_box">
-                        <img src="./img/heart.png" alt="">
-                        <span>777</span>
-                        <span>Likes</span>
+                    <!--오른쪽-->
+                    <div class="info_box">
+                        <table class="item_table item_txt">
+                            <tbody>
+                                <tr>
+                                    <td class="item_sec_name">등급</td>
+                                    <td class="item_sec_body" id="contents_ratings">17세 이상 관람가 (2022년 기준 2006년생 포함 이전
+                                        출생자)</td>
+                                </tr>
+                                <tr>
+                                    <td class="item_sec_name">관람시간</td>
+                                    <td class="item_sec_body" id="running_time">매직라운지쇼 시간표 참고 (1체험당 30분)</td>
+                                </tr>
+                                <tr>
+                                    <td class="item_sec_name">출연</td>
+                                    <td class="item_sec_body" id="cast">박웅, 강찬, 김용석, 김찬종, 조현우, 문경초, 한선천, 이동수, 은가은, 윤진솔,
+                                        허윤혜, 금조, 최유찬, 최호승, 정인지, 조원석, 이진호, 박근렬, 이강호, 이진우</td>
+                                </tr>
+                                <tr>
+                                    <td class="item_sec_name">가격</td>
+                                    <td class="item_sec_body" id="price">
+                                        <div class="price_box">
+                                            <div class="seat">S석<span class="seat_price">150,000원</span></div>
+                                            <div class="seat">A석<span class="seat_price">100,000원</span></div>
+                                            <div class="seat">R석<span class="seat_price">70,000원</span></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="item_sec_name">헤택</td>
+                                    <td class="item_sec_body" id="discount_rate">제휴할인</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <!--오른쪽-->
-                <div class="info_box">
-                    <table class="item_table item_txt">
-                        <tbody>
-                            <tr>
-                                <td class="item_sec_name">등급</td>
-                                <td class="item_sec_body" id="contents_ratings">전체관람가</td>
-                            </tr>
-                            <tr>
-                                <td class="item_sec_name">관람시간</td>
-                                <td class="item_sec_body" id="running_time">총 100분(인터미션 없음)</td>
-                            </tr>
-                            <tr>
-                                <td class="item_sec_name">출연</td>
-                                <td class="item_sec_body" id="cast">--</td>
-                            </tr>
-                            <tr>
-                                <td class="item_sec_name">가격</td>
-                                <td class="item_sec_body" id="price">
-                                    <div class="price_box">
-                                        <div class="seat">A석<span class="seat_price">100,000원</span></div>
-                                        <div class="seat"><span class="seat_price"></span></div>
-                                        <div class="seat"><span class="seat_price"></span></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="item_sec_name">헤택</td>
-                                <td class="item_sec_body" id="discount_rate">제휴할인</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
 
-            <!--예매하기섹션-->
-            <div class="ticketing_section">
-                <div class="ticketing_process">
-                    <div class="choice_title">날짜선택</div>
-                    <div class="choice_title">회차선택</div>
-                    <div class="choice_title">남은 좌석수</div>
-                </div>
-                <div class="option_choice_sec">
-                    <ul class="option_box">
-                        <li class="date_choice">2022-11-22</li>
-                        <li class="date_choice">2022-11-23</li>
-                        <li class="date_choice">2022-11-24</li>
-                    </ul>
-                    <ul class="option_box">
-                        <li class="time_choice"></li>
-                    </ul>
-                    <ul class="option_box">
-                        <li class="seat_choice"></li>
-                    </ul>
-                </div>
-                <div class="ticketing_btn_sec">
-                    <button class="ticketing_btn">예매하기</button>
+                <!--예매하기섹션-->
+                <div class="booking_section">
+                    <div class="booking_process">
+                        <div class="choice_title">날짜선택</div>
+                        <div class="choice_title">회차선택</div>
+                        <div class="choice_title">남은 좌석수</div>
+                    </div>
+                    <div class="option_choice_sec">
+                        <ul class="option_box">
+                            <li class="choice_btn">2022-11-22</li>
+                            <li class="choice_btn">2022-11-23</li>
+                            <li class="choice_btn">2022-11-24</li>
+                        </ul>
+                        <ul class="option_box">
+                            <li class="choice_btn"> 18 : 00</li>
+                        </ul>
+                        <ul class="option_box">
+                            <li class="seat"></li>
+                        </ul>
+                    </div>
+                    <div class="booking_btn_sec">
+                        <button class="booking_btn">예매하기</button>
+                    </div>
+
                 </div>
 
+                <!-- 탭(공연상세,리뷰,예매안내) -->
+                <div class="datail_info_section">
+                    <ul class="tabs">
+                        <li class="tab_title tab_border_bot" data-tab="tab_per_notice">공연상세정보</li>
+                        <li class="tab_title" data-tab="tab_review">관람평</li>
+                        <li class="tab_title" data-tab="tab_book_info">예매/취소 안내</li>
+                    </ul>
+                    <div class="tab_content tab_current" id="tab_per_notice">
+                        <div class="small_title">공지사항</div>
+                        <div class="notice_ment">
+                            <p>※유의</p>
+                            <p>공연을 즐겁게 즐겨주세요!</p>
+                        </div>
+
+                        <div class="small_title">공연정보</div>
+                        <div class="long_img_box">
+                            <img src="./img/test_long_img.jpg" alt="" class="perfom_info_img">
+                            <img src="./img/test_long_img2.jpg" alt="" class="perfom_info_img">
+                            <img src="./img/test_long_img3.jpg" alt="" class="perfom_info_img">
+                            <img src="./img/test_long_img4.jpg" alt="" class="perfom_info_img">
+                            <img src="./img/test_long_img5.jpg" alt="" class="perfom_info_img">
+                        </div>
+                    
+                        <div class="small_title">공연 상세정보</div>
+                    </div>
+                    <div class="tab_content" id="tab_review">
+                        <div class="review">리뷰</div>
+                    </div>
+                    <div class="tab_content" id="tab_book_info">
+                        <div class="info">예매/취소 안내</div>
+                    </div>
+                </div>
+
             </div>
-        </div>
+        </main>
+        <footer class="footer">
+            <div class="contents_area">
+                <div class="f_logo"></div>
+                <div class="f_desc">
+                    <p class="f_title">아트온</p >
+                    <p>서울특별시 강남구 서초동 서울로 1길 1 대표 아트온</p>
+                    <p>사업자 등록번호: 1001-1314-15444 / 통신판매번호: 제 2002-00000호</p>
+                    <p>Copyright YM_ARTON INC.ALL Rights Reserved</p>
+                </div>
+                <div class="cst_num">
+                    <img src="../ArtOn/img/call.png" alt="">
+                    <span>고객센터</span>
+                    <p class="f_number">1544-0000</p>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 

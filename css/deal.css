@@ -194,9 +194,10 @@
     font-weight: 900;
     text-align: center;
     position: relative;
+    box-sizing: border-box;
 }
 .tab_border_bot{
-    box-sizing: border-box;
+ 
     border-bottom: 5px solid #22974a;
 }
 /* 마우스 호버시 밑줄 왼쪽에서 오른쪽 */
@@ -204,7 +205,7 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: -3px;
     width: 0;
     height: 5px;
     background-color: #22974a;
@@ -232,7 +233,7 @@
     z-index: 10;
     width: 1200px;   
 }
-#tab_per_notice{background-color: pink;}
+
 #tab_review{background-color: skyblue;}
 #tab_book_info{background-color: orange;}
 
@@ -250,10 +251,33 @@
     font-size: 25px;
     font-weight: 900;
 
-    margin: 30px 0;
+    margin: 70px 0;
 }
 .perfom_info_img{
     vertical-align: middle;
+}
+
+.notice_table{
+    border-top: 3px solid #22974a;
+    border-collapse: collapse;
+    width: 960px;
+    margin: 0 auto;
+
+}
+.table_title{
+    padding: 20px 0 ;
+    background: #fcffcb;
+    font-size: 20px;
+    color: #196833;
+    border:1px solid #ddd;
+}
+.table_content{
+    text-align: left;
+    padding: 10px 0 10px 30px;
+    font-size: 14px;
+    color: #333;
+    line-height: 25px;
+    border:1px solid #ddd;
 }
 
 

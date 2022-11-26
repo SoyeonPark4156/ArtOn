@@ -49,7 +49,7 @@ $(document).ready(function(){
     });
     //상단으로 이동시켜주는 버튼 
     $(window).scroll(function(){
-        if ($(this).scrollTop() > 500){
+        if ($(this).scrollTop() > 1000){
             $('.btn_gotop').show();
         } else{
             $('.btn_gotop').hide();

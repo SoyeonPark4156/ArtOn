@@ -302,8 +302,38 @@
                         </table>
                     </div>
                     <!-- 리뷰 -->
+
+                    <!-- form 태그는 어디서부터 어디까지 감싸야 하지..? -->
+
+
                     <div class="tab_content" id="tab_review">
-                        <div class="review">리뷰</div>
+                        <div class="review_area">
+                            <div class="left_line">
+                                <div class="star_rating_area">
+                                    <div class="star_rating">
+                                        <input type="radio" id="5-stars" name="rating" value="5" />
+                                        <label for="5-stars" class="star">★</label>
+                                        <input type="radio" id="4-stars" name="rating" value="4" />
+                                        <label for="4-stars" class="star">★</label>
+                                        <input type="radio" id="3-stars" name="rating" value="3" />
+                                        <label for="3-stars" class="star">★</label>
+                                        <input type="radio" id="2-stars" name="rating" value="2" />
+                                        <label for="2-stars" class="star">★</label>
+                                        <input type="radio" id="1-star" name="rating" value="1" />
+                                        <label for="1-star" class="star">★</label>
+                                      </div>
+                                      <div class="rating_score">별점(<span id="input_rating">0</span>/5)</div>
+                                </div>
+                                
+                                <form action="#" id="review_frm">
+                                    <div class="review_content_area">
+                                        <textarea name="review_content" id="review_content" placeholder="내용을 작성해주세요.(최소 10자 / 최대 500자)"></textarea>
+                                        <div class="text_counter_area"><span id ="text_counter">0</span>자/500자</div>
+                                    </div>
+                                    <button id="btn_submit_review">후기 등록하기</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     <!-- 안내 -->
                     <div class="tab_content" id="tab_book_info">

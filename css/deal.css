@@ -234,9 +234,6 @@
     width: 1200px;   
 }
 
-#tab_review{background-color: skyblue;}
-#tab_book_info{background-color: orange;}
-
 /* **********************************공연 상세 정보 탭 바디*********************** */
 .btn_gotop{
     width: 70px;
@@ -261,24 +258,84 @@
     border-top: 3px solid #22974a;
     border-collapse: collapse;
     width: 960px;
-    margin: 0 auto;
+    margin: 50px auto;
 
 }
 .table_title{
-    padding: 20px 0 ;
+    padding: 15px 0 ;
     background: #fcffcb;
     font-size: 20px;
-    color: #196833;
+    color: #376948;
     border:1px solid #ddd;
 }
 .table_content{
     text-align: left;
-    padding: 10px 0 10px 30px;
-    font-size: 14px;
+    padding: 10px 10px 10px 20px;
+    font-size: 13px;
     color: #333;
     line-height: 25px;
     border:1px solid #ddd;
 }
+.detail_info_table{
+    width: 600px;
+    text-align: center;
+    border-collapse: collapse;
+}
+.detail_tb_title{
+    padding: 5px 0;
+    background-color: #ffc30e90;
+    color: #333;
+    border:1px solid #ddd;
+}
+.detail_tb_content{
+    padding: 5px 0;
+    font-size: 12px;
+    color: #333;
+    border:1px solid #ddd;
+}
+.red{
+    color:red;
+}
+/* **********************************리뷰 탭*********************** */
+
+/* **********************************예매/ 취소 안내 탭*********************** */
+.infos{
+    margin-top: 80px;
+}
+.infos_box{
+    display: flex;
+    margin: 30px 0 ;
+}
+.infos_title_sec{
+    width: 20%;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 900;
+}
+.infos_left_sec{
+    width: 80%;
+    text-align: left;
+    font-size: 15px;
+    line-height: 30px;
+    color: #333;
+    border-bottom: 2px solid #22974a;
+}
+.info_box5 div:last-child{
+    border-bottom: none;
+}
+.infos_table{
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+    color: #333;
+    border-collapse: collapse;
+}
+.infos_tb_content{
+    padding: 5px 0;
+    color: #333;
+    border:1px solid #ddd;
+}
+
 
 
 

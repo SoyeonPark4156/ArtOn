@@ -13,7 +13,7 @@ $(document).ready(function(){
     // 암튼 이런한거 강사님꺼 board.jsp 파일에 적혀있음.
     
 
-    //header, 탭메뉴 따라다니게
+    //header, 탭바 따라다니게
     let header_height = $('.header').height();
     let main_o_top = $('.main').offset().top - header_height;
     let tab_height = $('.tabs').height();
@@ -47,6 +47,7 @@ $(document).ready(function(){
         };
 
     });
+
     //상단으로 이동시켜주는 버튼 
     $(window).scroll(function(){
         if ($(this).scrollTop() > 1000){
@@ -61,7 +62,7 @@ $(document).ready(function(){
     });
 
     //탭메뉴 클릭시 탭 변환
-    $('.tabs li').click(function(){
+    $('.tab_title').click(function(){
 
         let tab_id = $(this).attr('data-tab');
 
@@ -72,9 +73,11 @@ $(document).ready(function(){
         $(this).addClass('tab_border_bot');
         
 	})
+
+
+
+    //리뷰탭 - 별점
+
  
 });
 
-function tab_style(){
-    
-}

@@ -72,12 +72,32 @@ $(document).ready(function(){
         $('.tab_title').removeClass('tab_border_bot');
         $(this).addClass('tab_border_bot');
         
-	})
-
-
+	});
 
     //리뷰탭 - 별점
+    $('input[name="rating"]').click(function(){
+        let rating_score = $(this).val();
+        $('#input_rating').text(rating_score);
+    });
+    
+    //리뷰탭 - 글 작성할 때 글자수 실시간 coount 해주는거
+    $('#review_content').keyup(function(){
+        let content_cnt = $(this).val().length;
+        $('#text_counter').text(content_cnt);
+    });
 
- 
+    //리뷰탭 - 후기 작성시 유효성 검사
+    $('#btn_submit_review').click(function(){
+        let content_cnt = $('#review_content').val().length;
+        if(content_cnt <= 10){
+            alert("10자 이상 적어주세요!")
+        }
+        else if(content_cnt >= 500){
+            alert("최대 500자까지 입력 가능합니다.")
+        }
+
+    alert("후기가 등록되었습니다.")
+    });
 });
+
 

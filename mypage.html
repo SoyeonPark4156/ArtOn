@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="./css/mypage.css">
     <link rel="icon" href="./img/바비콘로고.png">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="./js/h_f.js"></script>
-    <script src=""></script>
+    <script src="../ArtOn/js/h_f.js"></script>
+    <script src="./js/mypage.js"></script>
 </head>
 
 <body>
@@ -74,76 +74,108 @@
             </div>
         </header>
         <main class="main">
-            <div class="contents_area">
-                <ul class="mytabs">
-                    <li class="mytabs_li tab_border_bot" data-tab="mytab_mypage">마이페이지
-                        <span></span>
-                    </li>
-                    <li class="mytabs_li" data-tab="mytab_tit_chk">예매확인/취소
-                        <span></span>
-                    </li>
-                    <li class="mytabs_li" data-tab="mytab_likes">찜목록
-                        <span></span>
-                    </li>
-                </ul>
+            <div class="box">
+                <div class="contents_area">
+                    <ul class="mytabs">
+                        <li class="mytabs_li tab_border_bot" data-tab="mytab_mypage">마이페이지
+                            <span></span>
+                        </li>
+                        <li class="mytabs_li" data-tab="mytab_tit_chk">예매확인/취소
+                            <span></span>
+                        </li>
+                        <li class="mytabs_li" data-tab="mytab_likes">찜목록
+                            <span></span>
+                        </li>
+                    </ul>
 
-                <div class="mypage_section" id="mytab_mypage">
-                    <div class="myinfo_box">
-                        <img src="./img/person_icon_black.png" alt="">
-                        <div class="user_name">unknown</div>
-                        <a href=""><button class="user_info_btn">회원정보</button></a>
+                    <div class="mypage_section" id="mytab_mypage">
+                        <div class="myinfo_box">
+                            <img src="./img/person_icon_black.png" alt="">
+                            <div class="user_name">unknown</div>
+                            <a href=""><button class="user_info_btn">회원정보</button></a>
+                        </div>
+
+                        <div class="myticket_box">
+                            <div class="mytit_chk_top">
+                                <div class="mytit_chk_cancel">예매확인/취소</div>
+                                <div class="mytit_more_btn">더보기></div>
+                            </div>
+                            <div class="mytit_list">
+                                <table class="mytit_list_table">
+                                    <colgroup>
+                                        <col width=20%>
+                                        <col width=40%>
+                                        <col width=25%>
+                                        <col width=15%>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">예매일</th>
+                                            <th scope="col">공연정보</th>
+                                            <th scope="col">예매정보</th>
+                                            <th scope="col">상태</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="mytit_list_tbody">
+                                        <tr>
+                                            <td class="buy_date">2022.12.01</td>
+                                        
+                                            <td class="per_info">
+                                                <div class="thumb_img">
+                                                    <a href="">
+                                                        <img src="./img/poster1.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="info_text">
+                                                    <div class="perf_title">하리보 골드베렌 100주년 생일 기념전</div>
+                                                    <div class="perf_date">2022.10.13 ~ 2023.03.12</div>
+                                                    <div class="perf_spot">안녕 인사동 B1 인사센트럴뮤지엄</div>
+                                                </div>
+                                            </td>
+                                       
+                                            <td class="booking_info">
+                                                <div class="b_i_titles">
+                                                    <div>예약번호</div>
+                                                    <div>관람일</div>
+                                                    <div>매수</div>
+                                                </div>
+                                                <div class="b_i_content">
+                                                    <div class="green">M221467118</div>
+                                                    <div>상시</div>
+                                                    <div>1매</div>
+                                                </div>
+                                            </td>
+                                        
+                                            <td class="status">예매완료(입금완료)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="mylikes_box">
+                            <div class="mylikes_top">
+                                <div class="mylikes_title"></div>
+                                <div class="mylikes_more_btn"></div>
+                            </div>
+                            <div class="mylikes_content">
+
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="myticket_box">
-                        <div class="mytit_chk_top">
-                            <div class="mytit_chk_cancel">예매확인/취소</div>
-                            <div class="mytit_more_btn">더보기></div>
-                        </div>
-                        <div class="mytit_list">
-                            <table class="mytit_list_table">
-                                <colgroup>
-                                    <col width="15%">
-                                    <col width="40%">
-                                    <col width="30%">
-                                    <col width="15%">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>예매일</th>
-                                        <th>공연정보</th>
-                                        <th>예매정보</th>
-                                        <th>상태</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="mytit_list_tbody">
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <div class="myticket_chk_section" id="mytab_tit_chk"></div>
 
-                    <div class="mylikes_box">
-                        <div class="mylikes_top">
-                            <div class="mylikes_title"></div>
-                            <div class="mylikes_more_btn"></div>
-                        </div>
-                        <div class="mylikes_content">
+                    <div class="mylikes_section" id="mytab_likes"></div>
 
-                        </div>
-                    </div>
                 </div>
-
-                <div class="myticket_chk_section" id="mytab_tit_chk"></div>
-
-                <div class="mylikes_section" id="mytab_likes"></div>
-                
             </div>
         </main>
         <footer class="footer">
             <div class="contents_area">
                 <div class="f_logo"></div>
                 <div class="f_desc">
-                    <p class="f_title">아트온</p >
+                    <p class="f_title">아트온</p>
                     <p>서울특별시 강남구 서초동 서울로 1길 1 대표 아트온</p>
                     <p>사업자 등록번호: 1001-1314-15444 / 통신판매번호: 제 2002-00000호</p>
                     <p>Copyright YM_ARTON INC.ALL Rights Reserved</p>

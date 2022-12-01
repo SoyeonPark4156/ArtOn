@@ -68,14 +68,20 @@ a{text-decoration: none; color: inherit;}
     padding: 10px;
     box-sizing: border-box;
 
+    font-size: 22px;
+
     display: flex;
     align-items: center;
-    gap:5px;
+    gap:10px;
 
     color: #22974a;
 }
 .like_box > img{
-    width: 25px;
+    width: 32px;
+    cursor: pointer;
+}
+.full_heart{
+    display: none;
 }
 /*오른쪽 부분(공연 정보)*/
 .info_box{
@@ -154,16 +160,18 @@ a{text-decoration: none; color: inherit;}
     margin: 20px auto;
     
     line-height: 40px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     border: none;
 }
 .choice_btn:hover{
-    background: #22974a;
-    color: yellow;
+    background: #fff;
+    border: 1px solid #22974a;
+    color:#22974a;
 }
-.seat_stock{
-    
+.btn_chk{
+    background: #22974a;
+    color: #fff;
 }
 .seat_ment{
     margin-top: 10px;

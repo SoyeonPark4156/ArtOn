@@ -8,6 +8,7 @@ $(document).ready(function(){
     //     })
     // });
     
+    //일단 예매하기부분 앞단모양만 선택되는 것처럼 해놓은 것
     $('.choice_btn').click(function(){
         $(this).siblings().removeClass('btn_chk');
         $(this).addClass('btn_chk');
@@ -259,7 +260,7 @@ $(document).ready(function(){
     });
 
 
-    //수정 버튼 누르면 나오는 수정폼의 등록 버튼
+    //"수정" 버튼 누르면 나오는 수정폼의 "등록" 버튼
     $('.update_btn').click(function(){
         // let reupload = $(this).parents('.rv_update_content').text().trim();
         let reupload = $(this).parent().prev().children('.rv_update_content').val();
@@ -277,7 +278,7 @@ $(document).ready(function(){
         // md_box.prev('.rv_list_box').children().children().children('#rv_uploaded_content').val(reupload); 
     })
 
-    //수정 버튼 누르면 나오는 수정폼의 취소 버튼
+    //수정 버튼 누르면 나오는 수정폼의 "취소" 버튼
     $('.undo_btn').click(function(){
         let rv_box = $(this).parents('.rv_modify_box').prev('.rv_list_box');
         let md_box = rv_box.next('.rv_modify_box');

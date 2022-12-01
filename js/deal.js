@@ -8,12 +8,7 @@ $(document).ready(function(){
         })
     });
 
-
-    // if(!confirm("삭제하시겠습니까?")) return;
-    // 암튼 이런한거 강사님꺼 board.jsp 파일에 적혀있음.
-    
-
-    //header, 탭바 따라다니게
+    //header, 탭바 따라다니게 하기, h_f.js 파일에서 따와서 조금 변형
     let header_height = $('.header').height();
     let main_o_top = $('.main').offset().top - header_height;
     let tab_height = $('.tabs').height();
@@ -51,17 +46,22 @@ $(document).ready(function(){
 
     });
 
-    //상단으로 이동시켜주는 버튼 
+    //상단으로 이동시켜주는 버튼 이미지 폴더에 아이콘 있음
     $(window).scroll(function(){
-        if ($(this).scrollTop() > 1000){
-            $('.btn_gotop').show();
-        } else{
-            $('.btn_gotop').hide();
+        if ($(this).scrollTop() > 600){
+            $('.btn_gotop').css({
+                display : 'block'
+            });
+        }
+        else{
+            $('.btn_gotop').css({
+                display : 'none'
+            });
         }
     });
     $('.btn_gotop').click(function(){
         $('html, body').animate({scrollTop:0},400);
-        return false;
+        // return false;
     });
 
     //탭메뉴 클릭시 탭 변환
@@ -99,14 +99,66 @@ $(document).ready(function(){
     // rv_content => 예매한 사람만 작성할 수 있다고 alert 띄워주기.
     // 등록하기 할 때 디비 연동해서 유효성 검사할 것.
 
+
+   //리뷰에 보여질 사용자 id 뒤에 4글자만 마스킹하기
+    
+   function maskingid(userid) {
+    // return userid.replace(/\s(?=\s{4})/g, "*");
+
+    console.log(userid);
+    userid = userid.slice(0, userid.length-4);
+    
+    console.log(userid+"****");
+
+    //function을 불러줬으면 return을 해줘야지!!!!!!!!console만 찍음 어떡하늬
+    return userid+"****";
+}   
+
+    let content_cnt = $('#review_content').val().length;
+    let content = "어쩌구 저쩌구 리뷰내용입니다."
+
+    let date = new Date();
+    let today = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+
+    let tmp_id = "asdf1234";
+    tmp_id = maskingid(tmp_id);
+
+    let star_rate = 5;
+
+    let review = `  <div class="rv_list_box">
+                        <div class="rv_user_id">${tmp_id}</div>
+                        <div class="rv_uploaded_box">
+                            <div class="rv_uploaded"><span id="rv_upload_date">${today}</span></div>
+                            <div class="rv_uploaded"><span id="rv_uploaded_content">${content}</span></div>
+                        </div>
+                        <div class="rv_right_box">
+                            <div class="rv_star_rating star${star_rate}"></div>
+                            <div class="rv_modify_delete">
+                                <div class="rv_modify_btn">수정</div> |
+                                <div class="rv_delete_btn">삭제</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rv_modify_box">
+                        <div class="rv_modify"> 
+                            <div class="rv_user_id">${tmp_id}</div>
+                            <div class="rv_update_content_area">
+                                <textarea name="rv_update" class="rv_update_content" id="rv_update" maxlength="500" rows="2">${content}</textarea>
+                            </div>
+                            <div class="rv_update_undo">
+                                <button class="rv_btns update_btn">등록</button>
+                                <button class="rv_btns undo_btn">취소</button>
+                            </div>
+                        </div>
+                    </div>`
+
+    //리뷰리스트에 리뷰 10개 박아넣기
+    for(let i = 0; i < 10; i++){
+        $('.review_list').append(review); 
+    }
     //리뷰 등록하기
     $('#btn_submit_review').click(function(){
-
-        let content_cnt = $('#review_content').val().length;
-        let content = $('#review_content').val();
-        let date = new Date();
-        let today = `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`;
-
+      
         if(content_cnt <= 10){
             alert("10자 이상 입력해주세요!")
         }
@@ -114,44 +166,95 @@ $(document).ready(function(){
             alert("최대 500자까지 입력 가능합니다.")
         }
         else{
-            alert("후기가 등록되었습니다.")
-        
-        $('.review_list').append(
-                                `<div class="rv_list_box">
-                                    <div class="rv_user_id">soy_4156</div>
-                                    <div class="rv_uploaded_box">
-                                        <div class="rv_uploaded"><span id="rv_upload_date">${today}</span></div>
-                                        <div class="rv_uploaded"><span id="rv_uploaded_content">${content}</span></div>
-                                    </div>
-                                    <div class="rv_right_box">
-                                        <div class="rv_star_rating">★★★★★</div>
-                                        <div class="rv_modify_delete">
-                                            <div class="rv_modify_btn">수정</div> |
-                                            <div class="rv_delete_btn">삭제</div>
-                                        </div>
-                                    </div>
-                                </div>`
-        );
+            content = $('#review_content').val().trim();
+            star_rate = $('#input_rating').text();
+            $('.review_list').append(review);
+                alert("후기가 등록되었습니다.")
+                $('li[data-tab="tab_review"]').trigger("click"); // 새고할떄마다 리뷰탭 클릭해주기 귀찮아서 넣어준거
+                
+                //후기 등록하기 누르면 별점 체크된 부분이랑, 작성한 내용 초기화 해주긴
+                $('input[name="rating"]').prop("checked", false);
+                $('#review_content').val("");
         }
     });
-
 
     //리뷰 리스트에서 리뷰 "수정" 버튼 누르면 수정할 수 있는 폼 보이게 하기
     $('.rv_modify_btn').click(function(){
         let rv_box = $(this).parents('.rv_list_box');
-        
+        let md_box = rv_box.next('.rv_modify_box');
 
         rv_box.css({
+          display : 'none'
+        })
+        md_box.css({
+            display : 'block'
+        })
+
+    });
+    //리뷰 리스트에서 리뷰 "삭제" 버튼 누르면 삭제할 수 있는 폼 보이게 하기
+    $('.rv_modify_btn').click(function(){
+        let rv_box = $(this).parents('.rv_list_box');
+        let md_box = rv_box.next('.rv_modify_box');
+
+        rv_box.css({
+          display : 'none'
+        })
+        md_box.css({
+            display : 'block'
+        })
+
+    });
+
+
+    //수정 버튼 누르면 나오는 수정폼의 등록 버튼
+    $('.update_btn').click(function(){
+        // let reupload = $(this).parents('.rv_update_content').text().trim();
+        let reupload = $(this).parent().prev().children('.rv_update_content').val();
+        console.log(reupload);
+        //등록 버튼 누르면, 수정된 리뷰 잡는 것까지 됨. 이걸 디비에 저장하고 다시 리스트를 리로드 하면 된다.
+        let rv_box = $(this).parents('.rv_modify_box').prev('.rv_list_box');
+        let md_box = rv_box.next('.rv_modify_box');
+        rv_box.css({
+            display : 'flex'
+        })
+        md_box.css({
             display : 'none'
         })
-        $('.rv_modify_box').css({
-            display : 'block'
-        });
-
+        // 수정된 리뷰를 다시 등록하는거에 어려움을 느껴서 이건 백부분에 저장하고 다시 리로드 하는 방법으로 하는거 어떨지....
+        // md_box.prev('.rv_list_box').children().children().children('#rv_uploaded_content').val(reupload); 
     })
 
+    //수정 버튼 누르면 나오는 수정폼의 취소 버튼
+    $('.undo_btn').click(function(){
+        let rv_box = $(this).parents('.rv_modify_box').prev('.rv_list_box');
+        let md_box = rv_box.next('.rv_modify_box');
+        rv_box.css({
+            display : 'flex'
+        })
+        md_box.css({
+            display : 'none'
+        })
+    });
     
+    
+        // switch(star_rate){
+        //     case '1': $('.rv_star_rating').addClass('star1');
+        //             console.log(1);
+        //     break;
+        //     case '2': $('.rv_star_rating').addClass('star2');
+        //     break;
+        //     case '3': $('.rv_star_rating').addClass('star3');
+        //     break;
+        //     case '4': $('.rv_star_rating').addClass('star4');
+        //     break;
+        //     case '5': $('.rv_star_rating').addClass('star5');
+        //     break;
+
+        //     default : alert("별점을 선택해주세요.");
+        // }
 
 });
+
+
 
 

@@ -137,9 +137,9 @@
                                     <td class="item_sec_name">가격</td>
                                     <td class="item_sec_body" id="price">
                                         <div class="price_box">
-                                            <div class="seat">S석<span class="seat_price">150,000원</span></div>
-                                            <div class="seat">A석<span class="seat_price">100,000원</span></div>
-                                            <div class="seat">R석<span class="seat_price">70,000원</span></div>
+                                            <div class="seat">S석 <span class="seat_price green">150,000원</span></div>
+                                            <div class="seat">A석 <span class="seat_price green">100,000원</span></div>
+                                            <div class="seat">R석 <span class="seat_price green">70,000원</span></div>
                                         </div>
                                     </td>
                                 </tr>
@@ -163,13 +163,21 @@
                         <ul class="option_box">
                             <li class="choice_btn">2022-11-22</li>
                             <li class="choice_btn">2022-11-23</li>
-                            <li class="choice_btn">2022-11-24</li>
                         </ul>
                         <ul class="option_box">
-                            <li class="choice_btn"> 18 : 00</li>
+                            <li class="choice_btn"> 16 : 00</li>
+                            <li class="choice_btn"> 28 : 00</li>
                         </ul>
                         <ul class="option_box">
-                            <li class="seat"></li>
+                            <li class="seat_stock"> 
+                                <div class="seat_ment">선택한 회차의 잔여석과 가격을<br>확인할 수 있어요!</div>
+                                <div class="seat_stock_box">
+                                    <div class="seat">S석 <span class="seat_price">150,000원</span></div>
+                                    <div class="seat">A석 <span class="seat_price">100,000원</span></div>
+                                    <div class="seat">R석 <span class="seat_price">70,000원</span></div>
+
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <div class="booking_btn_sec">
@@ -310,11 +318,9 @@
                             </tbody>
                         </table>
                     </div>
+
                     <!-- 리뷰 -->
-
                     <!-- form 태그는 어디서부터 어디까지 감싸야 하지..? -->
-
-
                     <div class="tab_content" id="tab_review">
                         <div class="review_area">
                             <div class="left_line">
@@ -346,6 +352,7 @@
                             </div>
                         </div>
                         <div class="review_list_area">
+                            <!-- 리뷰에서 총 별점과 평균별점 보여주는 부분-->
                             <div class="rv_list_top">
                                 <div class="rv_count_area">
                                     <div class="rv_count_box">총 <span id="rv_count">0</span> 개 / </div>
@@ -365,22 +372,7 @@
                                         <div class="rv_uploaded"><span id="rv_uploaded_content">어쩌구 저쩌구 아주 훌룡한 공연 어쩌구 </span></div>
                                     </div>
                                     <div class="rv_right_box">
-                                        <div class="rv_star_rating">★★★★★</div>
-                                        <div class="rv_modify_delete">
-                                            <div class="rv_modify_btn">수정</div> |
-                                            <div class="rv_delete_btn">삭제</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="rv_list_box">
-                                    <!--우리 아이디는 5~20 글자까지 받음 -->
-                                    <div class="rv_user_id">soy_4156</div>
-                                    <div class="rv_uploaded_box">
-                                        <div class="rv_uploaded"><span id="rv_upload_date">2022-11-11</span></div>
-                                        <div class="rv_uploaded"><span id="rv_uploaded_content">어쩌구 저쩌구 아주 훌룡한 공연 어쩌구2222 </span></div>
-                                    </div>
-                                    <div class="rv_right_box">
-                                        <div class="rv_star_rating">★★★★★</div>
+                                        <div class="rv_star_rating star5"></div>
                                         <div class="rv_modify_delete">
                                             <div class="rv_modify_btn">수정</div> |
                                             <div class="rv_delete_btn">삭제</div>
@@ -388,18 +380,34 @@
                                     </div>
                                 </div>
                                 <div class="rv_modify_box">
-                                    <div class="rv_modify"> 
+                                    <div class="rv_modify">
                                         <div class="rv_user_id">soy_4156</div>
                                         <div class="rv_update_content_area">
-                                            <textarea name="rv_update" class="rv_update_content" id="rv_update" maxlength="500" rows="2" autofocus="true"></textarea>
+                                            <textarea name="rv_update" class="rv_update_content" id="rv_update" maxlength="500" rows="2"></textarea>
                                         </div>
                                         <div class="rv_update_undo">
-                                            <button class="rv_btns"id="rv_update_btn">등록</button>
-                                            <button class="rv_btns"id="rv_undo_btn">취소</button>
+                                            <button class="rv_btns update_btn">등록</button>
+                                            <button class="rv_btns undo_btn">취소</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        <!-- 페이지네이션 파트입니다!!!!!!!!!!!!!!! -->
+                            <div class="pagination">
+                                <a href="" class="prevpage">[이전]</a>
+                                <a href="" class="page">1</a>
+                                <a href="" class="page">2</a>
+                                <a href="" class="page">3</a>
+                                <a href="" class="page">4</a>
+                                <a href="" class="page">5</a>
+                                <a href="" class="page">6</a>
+                                <a href="" class="page">7</a>
+                                <a href="" class="page">8</a>
+                                <a href="" class="page">9</a>
+                                <a href="" class="page">10</a>
+                                <a href="" class="endpage">[다음]</a>
+                            </div>
+                        
                         </div>
                     </div>
                     <!-- 안내 -->

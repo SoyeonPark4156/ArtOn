@@ -166,7 +166,7 @@ $(document).ready(function(){
                         <div class="rv_modify"> 
                             <div class="rv_user_id">${tmp_id}</div>
                             <div class="rv_update_content_area">
-                                <textarea name="rv_update" class="rv_update_content" id="rv_update" maxlength="500" rows="2">${content}</textarea>
+                                <textarea name="rv_update" class="rv_update_content" id="rv_update" maxlength="500" rows="4">${content}</textarea>
                             </div>
                             <div class="rv_update_undo">
                                 <button class="rv_btns update_btn">등록</button>

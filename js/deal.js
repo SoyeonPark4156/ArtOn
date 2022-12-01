@@ -1,12 +1,34 @@
 $(document).ready(function(){
 
-    $(document).on('click','.choice_btn', function(){
-        $(this).css({
-            background : '#fcffcb',
-            color: '#22974a',
-            border : '1px solid #22974a'
-        })
+    // $(document).on('click','.choice_btn', function(){
+    //     $(this).css({
+    //         background : '#fcffcb',
+    //         color: '#22974a',
+    //         border : '1px solid #22974a'
+    //     })
+    // });
+    
+    $('.choice_btn').click(function(){
+        $(this).siblings().removeClass('btn_chk');
+        $(this).addClass('btn_chk');
     });
+
+    //좋아요 likes 기능
+    $('.like_box > img').click(function(){
+        $('.empty_heart').css({
+            display : 'none'
+        })
+        $('.full_heart').css({
+            display : 'block'
+        })
+
+        //likes 수 + 1;
+        let likes = $('.likes_cnt').text();
+        likes = parseInt(likes) + 1;
+        $('.likes_cnt').text(likes); 
+    });
+
+
 
     //header, 탭바 따라다니게 하기, h_f.js 파일에서 따와서 조금 변형
     let header_height = $('.header').height();
@@ -17,7 +39,7 @@ $(document).ready(function(){
     $(window).scroll(function(){
         let header_bot = $(window).scrollTop();
  
-        if(main_o_top<= header_bot){
+        if(main_o_top <= header_bot){
             $('.header').addClass('header_event')
             $("#wrap").css({
                 paddingTop: header_height

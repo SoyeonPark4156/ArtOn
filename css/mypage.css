@@ -78,4 +78,69 @@
     font-size: 25px;
     font-weight: 900;
 }
+.mytit_list_table{
+    width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.mytit_list_table thead{
+    border-top: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.mytit_list_table thead tr th{
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgb(81, 81, 81);
+}
+.mytit_list_tbody{
+    width: 100%;
+    color:rgb(81, 81, 81);
+    font-size: 15px;
+}
+.mytit_list_tbody td{
+    padding: 20px 0;
+}
+.mytit_list_tbody tr{
+    border-bottom: 1px solid #ccc;
+}
+.buy_date{
+    text-align: center;
+    margin-top: 20px;
+}
+.thumb_img a img{
+    width: 90px;
+    height: 127px;
+}
+.per_info{
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+}
+.perf_title{
+    margin: 10px 0 20px 0;
+}
+.booking_info{
+    position: relative;
+}
+.booking_info div{
+    padding: 5px 0;
+}
+.b_i_titles{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+.b_i_content{
+    position: absolute;
+    top: 10%;
+    left:40%;
+}
+.status{
+    font-size: 18px;
+    font-weight: bold;
+    color:#333;
+}
+
+
 

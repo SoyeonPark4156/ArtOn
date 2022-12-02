@@ -115,7 +115,7 @@ a{text-decoration: none; color: inherit;}
     height: 300px;
     margin: 80px auto;
 
-    border: 2px solid #22974a;
+    border: 2px solid #008049;
     background-color: #fafafa;;
     
 }
@@ -166,12 +166,12 @@ a{text-decoration: none; color: inherit;}
 }
 .choice_btn:hover{
     background: #fff;
-    border: 1px solid #22974a;
+    border: 1px solid #008049;
     color:#22974a;
 }
 .btn_chk{
-    background: #22974a;
-    color: #fff;
+    background: #008049;
+    color: #fcffcb;
 }
 .seat_ment{
     margin-top: 10px;
@@ -193,20 +193,25 @@ a{text-decoration: none; color: inherit;}
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-color: #fff;
 }
 .booking_btn{
     width: 300px;
     height: 40px;
 
-    background-color: #22974a;
-    color:#fcffcb;
+    background-color: #8a8a8a;
+    color:#fff;
     border: none;
 
     font-size: 20px;
     font-weight: 900;
 }
+.booking_btn:hover{
+    background: #fff;
+    border: 1px solid #008049;
+    color:#008049;
+}
+
 /* *****************************탭메뉴***************************** */
 .datail_info_section{
     width: 100%;
@@ -232,7 +237,7 @@ a{text-decoration: none; color: inherit;}
 }
 .tab_border_bot{
  
-    border-bottom: 5px solid #22974a;
+    border-bottom: 5px solid #008049;
 }
 /* 마우스 호버시 밑줄 왼쪽에서 오른쪽 */
 .tab_title::after{
@@ -242,7 +247,7 @@ a{text-decoration: none; color: inherit;}
     bottom: -3px;
     width: 0;
     height: 5px;
-    background-color: #22974a;
+    background-color: #008049;
 }
 .tab_title:hover::after{
     transition: all .5s;
@@ -290,7 +295,7 @@ a{text-decoration: none; color: inherit;}
 }
 
 .notice_table{
-    border-top: 3px solid #22974a;
+    border-top: 3px solid #008049;
     border-collapse: collapse;
     width: 960px;
     margin: 50px auto;
@@ -337,7 +342,7 @@ a{text-decoration: none; color: inherit;}
     width: 100%;
     height: 230px;
     margin: 30px 0;
-    border: 3px solid #22974a;
+    border: 3px solid #008049;
 }
 .left_line{
     width: 90%;
@@ -414,8 +419,8 @@ a{text-decoration: none; color: inherit;}
   #btn_submit_review{
     width: 180px;
     height: 50px;
-    background-color: #22974bea;
-    color: #fff;
+    background-color: #008049;
+    color: #fcffcb;
     font-size: 20px;
     font-weight: 900;
     border: none;
@@ -433,7 +438,7 @@ a{text-decoration: none; color: inherit;}
     align-items: center;
     font-size: 18px;
     font-weight: 900;
-    border-bottom: 2px solid #22974a;
+    border-bottom: 2px solid #008049;
    }
    .rv_count_area{
     display: flex;
@@ -461,7 +466,7 @@ a{text-decoration: none; color: inherit;}
    }
    .rv_uploaded_box{
     width: 850px;
-    height: 100%;
+    max-height: 155px;
     text-align: left;
     gap:5px;
     word-break: break-all;
@@ -502,7 +507,7 @@ a{text-decoration: none; color: inherit;}
    }
    .rv_modify_btn:hover,
    .rv_delete_btn:hover{
-    color: #22974a;
+    color: #008049;
    }
 
    /*리뷰 수정하는 부분은 평소엔 display:none 이다가 "수정"버튼 누르면 block으로 */
@@ -546,7 +551,7 @@ a{text-decoration: none; color: inherit;}
     border-radius: 5px;
    }
    .rv_btns:hover{
-    background-color: #22974a;
+    background-color: #008049;
     color: #fcffcb;
    }
 
@@ -582,7 +587,7 @@ a{text-decoration: none; color: inherit;}
     font-size: 15px;
     line-height: 30px;
     color: #333;
-    border-bottom: 2px solid #22974a;
+    border-bottom: 2px solid #008049;
 }
 .info_box5 div:last-child{
     border-bottom: none;

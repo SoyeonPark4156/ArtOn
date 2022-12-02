@@ -1,32 +1,47 @@
 $(document).ready(function(){
 
-    // $(document).on('click','.choice_btn', function(){
-    //     $(this).css({
-    //         background : '#fcffcb',
-    //         color: '#22974a',
-    //         border : '1px solid #22974a'
-    //     })
-    // });
-    
     //일단 예매하기부분 앞단모양만 선택되는 것처럼 해놓은 것
     $('.choice_btn').click(function(){
         $(this).siblings().removeClass('btn_chk');
         $(this).addClass('btn_chk');
     });
 
+    $('.booking_btn').click(function(){
+
+        if(!$('.show_date').hasClass('btn_chk')){
+            alert("날짜를 선택해주세요!")
+        }
+        else if(!$('.show_time').hasClass('btn_chk')){
+            alert("시간을 선택해주세요!")
+        }
+        else{
+            
+            $(this).css({
+                background: "#008049",
+                color:"#fcffcb"
+            })
+            
+            alert("예매가 완료되었습니다.")
+        }
+    });
+
+
+
     //좋아요 likes 기능
-    $('.like_box > img').click(function(){
-        $('.empty_heart').css({
+    $('.empty_heart').click(function(){
+        $(this).css({
             display : 'none'
         })
         $('.full_heart').css({
             display : 'block'
         })
 
+        let tmp = true;
         //likes 수 + 1;
         let likes = $('.likes_cnt').text();
         likes = parseInt(likes) + 1;
         $('.likes_cnt').text(likes); 
+        
     });
 
 
@@ -119,13 +134,8 @@ $(document).ready(function(){
         
     });
 
-    //리뷰탭 - 후기 작성시 유효성 검사
-    // rv_content => 예매한 사람만 작성할 수 있다고 alert 띄워주기.
-    // 등록하기 할 때 디비 연동해서 유효성 검사할 것.
-
 
    //리뷰에 보여질 사용자 id 뒤에 4글자만 마스킹하기
-    
    function maskingid(userid) {
     // return userid.replace(/\s(?=\s{4})/g, "*");
 
@@ -206,8 +216,8 @@ $(document).ready(function(){
                     </div>` */
 
     //리뷰리스트에 리뷰 10개 박아넣기
-    for(let i = 0; i < 10; i++){
-        let tmp_content = "어쩌구 저쩌구 리뷰내용입니다."+i;
+    for(let i = 0; i < 5; i++){
+        let tmp_content = "어쩌구 저쩌구 ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd."+i;
         let tmp_star_rate = 5;
         input_rv(tmp_content, tmp_star_rate);
     }
@@ -215,6 +225,7 @@ $(document).ready(function(){
     $('#btn_submit_review').click(function(){
       
         content_cnt = $('#review_content').val().length;
+        tmp_id = 'arton_1245';
         
         
         if(content_cnt <= 10){
@@ -226,6 +237,7 @@ $(document).ready(function(){
         else{
                 let input_content = $('#review_content').val().trim();
                 let input_star_rate = $('#input_rating').text();
+
                 input_rv(input_content , input_star_rate);
 
                 alert("후기가 등록되었습니다.")
@@ -239,7 +251,8 @@ $(document).ready(function(){
     });
 
     //리뷰 리스트에서 리뷰 "수정" 버튼 누르면 수정할 수 있는 폼 보이게 하기
-    $('.rv_modify_btn').click(function(){
+    // $('.rv_modify_btn').click(function(){
+    $(document).on('click','.rv_modify_btn',function(){
         console.log("1");
         let rv_box = $(this).parents('.rv_list_box');
         let md_box = rv_box.next('.rv_modify_box');
@@ -253,15 +266,19 @@ $(document).ready(function(){
 
     });
 
+
+
     //리뷰 리스트에서 리뷰 "삭제" 버튼 누르면 삭제
-    $('.rv_delete_btn').click(function(){
+    // $('.rv_delete_btn').click(function(){
+    $(document).on('click','.rv_delte_btn',function(){
         let rv_box = $(this).parents('.rv_list_box');
         rv_box.remove();
     });
 
 
     //"수정" 버튼 누르면 나오는 수정폼의 "등록" 버튼
-    $('.update_btn').click(function(){
+    // $('.update_btn').click(function(){
+    $(document).on('click','.update_btn',function(){
         // let reupload = $(this).parents('.rv_update_content').text().trim();
         let reupload = $(this).parent().prev().children('.rv_update_content').val();
         console.log(reupload);
@@ -279,7 +296,8 @@ $(document).ready(function(){
     })
 
     //수정 버튼 누르면 나오는 수정폼의 "취소" 버튼
-    $('.undo_btn').click(function(){
+    // $('.undo_btn').click(function(){
+    $(document).on('click','.undo_btn',function(){
         let rv_box = $(this).parents('.rv_modify_box').prev('.rv_list_box');
         let md_box = rv_box.next('.rv_modify_box');
         rv_box.css({

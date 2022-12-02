@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./css/mypage.css">
     <link rel="icon" href="./img/바비콘로고.png">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="../ArtOn/js/h_f.js"></script>
     <script src="./js/mypage.js"></script>
 </head>
 
@@ -72,12 +71,13 @@
                     </div>
                 </div>
             </div>
+            
+
         </header>
         <main class="main">
-            <div class="box">
                 <div class="contents_area">
                     <ul class="mytabs">
-                        <li class="mytabs_li tab_border_bot" data-tab="mytab_mypage">마이페이지
+                        <li class="mytabs_li" data-tab="mytab_mypage">마이페이지
                             <span></span>
                         </li>
                         <li class="mytabs_li" data-tab="mytab_tit_chk">예매확인/취소
@@ -88,7 +88,7 @@
                         </li>
                     </ul>
 
-                    <div class="mypage_section" id="mytab_mypage">
+                    <div class="mypage_tab userinfo_section tab_curr" id="mytab_mypage">
                         <div class="myinfo_box">
                             <img src="./img/person_icon_black.png" alt="">
                             <div class="user_name">unknown</div>
@@ -96,9 +96,9 @@
                         </div>
 
                         <div class="myticket_box">
-                            <div class="mytit_chk_top">
-                                <div class="mytit_chk_cancel">예매확인/취소</div>
-                                <div class="mytit_more_btn">더보기></div>
+                            <div class="box_top">
+                                <div class="box_name">예매확인/취소</div>
+                                <div class="more_btn">더보기></div>
                             </div>
                             <div class="mytit_list">
                                 <table class="mytit_list_table">
@@ -154,22 +154,50 @@
                         </div>
 
                         <div class="mylikes_box">
-                            <div class="mylikes_top">
-                                <div class="mylikes_title"></div>
-                                <div class="mylikes_more_btn"></div>
+                            <div class="box_top">
+                                <div class="box_name">찜목록</div>
+                                <div class="more_btn">더보기></div>
                             </div>
-                            <div class="mylikes_content">
-
+                            <div class="mylikes_list">
+                                <div class="mylikes">
+                                    <div class="mylikes_content">
+                                        <img src="./img/poster2.jpg" alt="">
+                                        <div class="my_perf_name">MOONCHILD Live In Seoul w/ Special Guest : KIEFER [문차일드 서울라이브공연 / 특별초청재즈음악인 : 키퍼]</div>
+                                        <a href=""><button class="my_gobook_btn">예매하러가기></button></a>
+                                    </div> 
+                                </div>
+                                <div class="mylikes">
+                                    <div class="mylikes_content">
+                                        <img src="./img/poster3.jpg" alt="">
+                                        <div class="my_perf_name">MOONCHILD</div>
+                                    <a href=""><button class="my_gobook_btn">예매하러가기></button></a>
+                                    </div>
+                                </div>
+                                <div class="mylikes">
+                                    <div class="mylikes_content">
+                                        <img src="./img/poster4.jpg" alt="">
+                                        <div class="my_perf_name">MOONCHILD</div>
+                                    <a href=""><button class="my_gobook_btn">예매하러가기></button></a>
+                                    </div>
+                                </div>
+                                <div class="mylikes">
+                                    <div class="mylikes_content">
+                                        <img src="./img/poster5.jpg" alt="">
+                                        <div class="my_perf_name">MOONCHILD</div>
+                                    <a href=""><button class="my_gobook_btn">예매하러가기></button></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="myticket_chk_section" id="mytab_tit_chk"></div>
+                    <div class="mypage_tab myticket_chk_section" id="mytab_tit_chk">
+                        
+                    </div>
 
-                    <div class="mylikes_section" id="mytab_likes"></div>
+                    <div class="mypage_tab mylikes_section" id="mytab_likes"></div>
 
                 </div>
-            </div>
         </main>
         <footer class="footer">
             <div class="contents_area">

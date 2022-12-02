@@ -173,8 +173,11 @@ a{text-decoration: none; color: inherit;}
     background: #008049;
     color: #fcffcb;
 }
+.show_time{
+    display: none;
+}
 .seat_ment{
-    margin-top: 10px;
+    margin-top: 30px;
     color: #333;
 }
 .seat_stock_box{
@@ -183,8 +186,11 @@ a{text-decoration: none; color: inherit;}
     position: relative;
     left: 50%;
     transform: translate(-50%, 20%);
-    border: 2px solid #ffc30e;
+    /* border: 2px solid #ffc30e; */
+    background-color: #fff;
     text-align: left;
+
+    display: none;
 }
 
 .booking_btn_sec{
@@ -199,17 +205,14 @@ a{text-decoration: none; color: inherit;}
     width: 300px;
     height: 40px;
 
-    background-color: #8a8a8a;
-    color:#fff;
+    background-color: #008049;
+    color:#fcffcb;
     border: none;
-
     font-size: 20px;
     font-weight: 900;
 }
 .booking_btn:hover{
-    background: #fff;
-    border: 1px solid #008049;
-    color:#008049;
+    background-color: #2f835f;
 }
 
 /* *****************************탭메뉴***************************** */

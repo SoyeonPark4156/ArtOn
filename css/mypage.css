@@ -23,6 +23,7 @@
     left: 0;
 }
 .mytabs_li:hover{
+    cursor: pointer;
     color:#008049;
 }
 .mytabs_li:hover span{
@@ -83,6 +84,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 .box_name{
     font-size: 25px;
@@ -100,7 +102,7 @@
 }
 .mytit_list_table thead tr th{
     font-size: 20px;
-    font-weight: lighter;
+    font-weight: 700;
     color: rgb(81, 81, 81);
 }
 .mytit_list_tbody{
@@ -154,7 +156,7 @@
 
 /********************찜목록!!!!******************************/
 .mylikes_box{
-    margin-top: 50px;
+    margin-top: 70px;
     
 }
 .mylikes_list{
@@ -195,7 +197,7 @@
     text-overflow:unset;
     overflow :visible;
     max-height: 100px;
-    transition: all 0.3s;
+    /* transition: all 0.5s; 트랜지션 안먹음~ */
 }
 .my_gobook_btn{
     width: 150px;
@@ -208,7 +210,80 @@
     font-size: 18px;
     font-weight: 900;
 }
+/*********************예매확인/취소 탭!******************************/
+.sort_btn_area{
+    width: 100%;
+    margin : 50px 0;
+}
+.sort_btn_box{
+    width: 500px;
+    height: 50px;
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.my_sort_btn{
+    width: 280px;
+    height: 50px;
+    border: 2px solid;
+    background-color: #fff;
+    border-radius: 30px;
+    font-size: 20px;
+    color: rgb(140, 140, 140);
 
-
-
-
+}
+#reserv_chk{
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    z-index: 999;
+}
+#reserv_cancel{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.zindex{
+    z-index: 999;
+    color:#008049;
+}
+/****개월별로 예매리스트 솔팅해주는 버튼들***/
+.reference{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+.month_btn{
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #b0b0b0;
+    text-align: center;
+    font-weight: 900;
+    color: #fff;
+}
+.month_btn:hover{
+    cursor: pointer;
+}
+.mytit_null_box{
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 30px;
+    color: #333;
+    display: none;
+}
+/*****페이지네이션*******/
+.pagination{
+    margin: 30px 0;
+    font-size: 15px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}

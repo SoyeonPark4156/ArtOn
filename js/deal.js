@@ -4,6 +4,20 @@ $(document).ready(function(){
     $('.choice_btn').click(function(){
         $(this).siblings().removeClass('btn_chk');
         $(this).addClass('btn_chk');
+
+        if($('.show_date').hasClass('btn_chk')){
+            $('.show_time').css({
+                display : 'block'
+            })
+        }
+        if($('.show_time').hasClass('btn_chk')){
+            $('.seat_ment').css({
+                display : 'none'
+            })
+            $('.seat_stock_box').css({
+                display : 'block'
+            })
+        }
     });
 
     $('.booking_btn').click(function(){
@@ -20,7 +34,7 @@ $(document).ready(function(){
                 background: "#008049",
                 color:"#fcffcb"
             })
-            
+
             alert("예매가 완료되었습니다.")
         }
     });
@@ -270,7 +284,7 @@ $(document).ready(function(){
 
     //리뷰 리스트에서 리뷰 "삭제" 버튼 누르면 삭제
     // $('.rv_delete_btn').click(function(){
-    $(document).on('click','.rv_delte_btn',function(){
+    $(document).on('click','.rv_delete_btn',function(){
         let rv_box = $(this).parents('.rv_list_box');
         rv_box.remove();
     });

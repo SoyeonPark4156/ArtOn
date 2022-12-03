@@ -98,7 +98,7 @@
                         <div class="myticket_box">
                             <div class="box_top">
                                 <div class="box_name">예매확인/취소</div>
-                                <div class="more_btn">더보기></div>
+                                <div class="more_btn mytit_more_btn">더보기></div>
                             </div>
                             <div class="mytit_list">
                                 <table class="mytit_list_table tab1">
@@ -156,9 +156,9 @@
                         <div class="mylikes_box">
                             <div class="box_top">
                                 <div class="box_name">찜목록</div>
-                                <div class="more_btn">더보기></div>
+                                <div class="more_btn mylikes_more_btn">더보기></div>
                             </div>
-                            <div class="mylikes_list">
+                            <div class="mylikes_list" id="likes">
                                 <div class="mylikes">
                                     <div class="mylikes_content">
                                         <img src="./img/poster2.jpg" alt="">
@@ -187,6 +187,13 @@
                                     <a href=""><button class="my_gobook_btn">예매하러가기></button></a>
                                     </div>
                                 </div>
+                                <div class="mylikes">
+                                    <div class="mylikes_content">
+                                        <img src="./img/poster6.jpg" alt="">
+                                        <div class="my_perf_name">MOONCHILD Live In Seoul w/ Special Guest : KIEFER [문차일드 서울라이브공연 / 특별초청재즈음악인 : 키퍼]</div>
+                                        <a href=""><button class="my_gobook_btn">예매하러가기></button></a>
+                                    </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -199,7 +206,7 @@
                             </div>
                         </div>
                         <div class="reference">
-                            <div class="month_btn"><a herf=""><span>3개월</span></a></div>
+                            <div class="month_btn click_event"><a herf=""><span>3개월</span></a></div>
                             <div class="month_btn"><a herf=""><span>6개월</span></a></div>
                             <div class="month_btn"><a herf=""><span>12개월</span></a></div>
                         </div>
@@ -268,7 +275,19 @@
                         </div>
                     </div>
 
-                    <div class="mypage_tab mylikes_section" id="mytab_likes"></div>
+                    <div class="mypage_tab mylikes_section" id="mytab_likes">
+                        <div class="likes_title">찜목록</div>
+                        <div class="mylikes_list" id="likes_more">
+                            <div class="mylikes">
+                                <div class="mylikes_content">
+                                    <img src="./img/poster2.jpg" alt="">
+                                    <div class="my_perf_name">MOONCHILD Live In Seoul w/ Special Guest : KIEFER [문차일드 서울라이브공연 / 특별초청재즈음악인 : 키퍼]</div>
+                                    <a href=""><button class="my_gobook_btn">예매하러가기></button></a>
+                                </div> 
+                            </div> 
+                        </div>
+
+                    </div>
 
                 </div>
         </main>

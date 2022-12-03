@@ -175,8 +175,8 @@ $(document).ready(function(){
                 review = `<div class="rv_list_box">
                         <div class="rv_user_id">${maskingid(tmp_id)}</div>
                         <div class="rv_uploaded_box">
-                            <div class="rv_uploaded"><span id="rv_upload_date">${today}</span></div>
-                            <div class="rv_uploaded"><span id="rv_uploaded_content">${content}</span></div>
+                            <div class="rv_uploaded" id="rv_upload_date">${today}</div>
+                            <div class="rv_uploaded" id="rv_uploaded_content">${content}</div>
                         </div>
                         <div class="rv_right_box">
                             <div class="rv_star_rating star${star_rate}"></div>
@@ -190,7 +190,7 @@ $(document).ready(function(){
                         <div class="rv_modify"> 
                             <div class="rv_user_id">${tmp_id}</div>
                             <div class="rv_update_content_area">
-                                <textarea name="rv_update" class="rv_update_content" id="rv_update" maxlength="500" rows="4">${content}</textarea>
+                                <textarea name="rv_update" class="rv_update_content" id="rv_update" maxlength="500" rows="4"></textarea>
                             </div>
                             <div class="rv_update_undo">
                                 <button class="rv_btns update_btn">등록</button>
@@ -231,10 +231,14 @@ $(document).ready(function(){
 
     //리뷰리스트에 리뷰 10개 박아넣기
     for(let i = 0; i < 5; i++){
-        let tmp_content = "어쩌구 저쩌구 ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd."+i;
+        let tmp_content = "어쩌구 저쩌구 dddddd"+i;
         let tmp_star_rate = 5;
         input_rv(tmp_content, tmp_star_rate);
     }
+
+    //리뷰개수 구해주기
+    let rv_cnt = $('.rv_list_box').length;
+    $('.rv_count').text(rv_cnt);
     //리뷰 등록하기
     $('#btn_submit_review').click(function(){
       
@@ -267,10 +271,14 @@ $(document).ready(function(){
     //리뷰 리스트에서 리뷰 "수정" 버튼 누르면 수정할 수 있는 폼 보이게 하기
     // $('.rv_modify_btn').click(function(){
     $(document).on('click','.rv_modify_btn',function(){
-        console.log("1");
+        
+        let review_text = $(this).parents('.rv_list_box').children('.rv_uploaded_box').children('#rv_uploaded_content').text();
+        console.log(review_text);
+        $(this).parents('.rv_list_box').next('.rv_modify_box').children().children('.rv_update_content_area').children('.rv_update_content').val(review_text);
+
         let rv_box = $(this).parents('.rv_list_box');
         let md_box = rv_box.next('.rv_modify_box');
-
+        $(this)
         rv_box.css({
           display : 'none'
         })
@@ -296,6 +304,9 @@ $(document).ready(function(){
         // let reupload = $(this).parents('.rv_update_content').text().trim();
         let reupload = $(this).parent().prev().children('.rv_update_content').val();
         console.log(reupload);
+        $(this).parents('.rv_modify_box').prev('.rv_list_box').children('.rv_uploaded_box').children('#rv_uploaded_content').text(reupload);
+
+        
         //등록 버튼 누르면, 수정된 리뷰 잡는 것까지 됨. 이걸 디비에 저장하고 다시 리스트를 리로드 하면 된다.
         let rv_box = $(this).parents('.rv_modify_box').prev('.rv_list_box');
         let md_box = rv_box.next('.rv_modify_box');

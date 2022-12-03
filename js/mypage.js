@@ -43,7 +43,7 @@ $(document).ready(function(){
             // })
             
         });
-        $('li[data-tab="mytab_tit_chk"]').trigger('click');
+        // $('li[data-tab="mytab_tit_chk"]').trigger('click');
 
 
     let myticket = `<tr>
@@ -115,5 +115,34 @@ $(document).ready(function(){
             display : 'block'
         })
     });
-    
+
+    //3개월,6개월,12개월 별로 예매내역 다르게 보이는 버튼들...인데 클릭이벤트만
+    $('.month_btn').click(function(){
+        $('.month_btn').removeClass('click_event')
+        $(this).addClass('click_event')
+
+    })
+
+
+    //찜목록
+
+    let like_perf = `<div class="mylikes">
+                        <div class="mylikes_content">
+                            <img src="./img/poster2.jpg" alt="">
+                            <div class="my_perf_name">MOONCHILD</div>
+                        <a href=""><button class="my_gobook_btn">예매하러가기></button></a>
+                        </div>
+                    </div>`
+
+    for(let i=1;i<7;i++){
+        $('#likes_more').append(like_perf);
+    }
+
+    //더보기> 버튼 누르면 해당 섹션의 탭으로 넘어가게 trigger
+    $('.mytit_more_btn').click(function(){
+        $('li[data-tab="mytab_tit_chk"]').trigger('click');
+    })
+    $('.mylikes_more_btn').click(function(){
+        $('li[data-tab="mytab_likes"]').trigger('click');
+    })
 });

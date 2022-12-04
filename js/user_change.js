@@ -14,18 +14,41 @@ const reg_phone = /^[0-9]{11,}$/; //11자리 이상 숫자만
 let u_new_name = $('#u_new_name');
 let new_email = $('#new_email');
 let u_new_phone = $('#u_new_phone');
-let promo_btn = $('input[name="promo_btn"]')
 
 
 function focus_chk(type) {
 
+    if (type == "u_new_name") {
+       
+        remove_msg('new_email');
+        remove_msg('u_new_phone');
+
+        if (!reg_email.test(new_email.val())) {
+            set_message('올바른 이메일의 형식이 아닙니다', 'new_email')
+        }
+        blank_chk($('#u_msg_new_email'), $('#new_email'));
+        
+        if (!reg_phone.test(u_new_phone.val())) {
+            set_message('올바른 전화번호의 형식이 아닙니다','new_phone')
+        }
+        blank_chk($('#u_msg_new_phone'),$('#u_new_phone'));
+        
+    }
+
     if (type == "new_email") {
        
-        // remove_msg('u_new_name');
+        remove_msg('u_new_name');
+        remove_msg('u_new_phone');
+
         if (!reg_name.test(u_new_name.val())) {
-            set_message('이름은 한글 또는 영문만 입력할 수 있습니다.', 'u_new_name')
+            set_message('이름은 한글 또는 영문만 입력할 수 있습니다.', 'new_name')
         }
-        blank_chk($('#reg_msg_u_new_name'), $('#u_new_name'));
+        blank_chk($('#u_msg_new_name'), $('#u_new_name'));
+        
+        if (!reg_phone.test(u_new_phone.val())) {
+            set_message('올바른 전화번호의 형식이 아닙니다','new_phone')
+        }
+        blank_chk($('#u_msg_new_phone'),$('#u_new_phone'));
         
     }
     else if (type == "u_new_phone") {
@@ -34,13 +57,13 @@ function focus_chk(type) {
         remove_msg('new_email');
         
         if (!reg_name.test(u_new_name.val())) {
-            set_message('이름은 한글 또는 영문만 입력할 수 있습니다.', 'u_new_name')
+            set_message('이름은 한글 또는 영문만 입력할 수 있습니다.', 'new_name')
         }
-        blank_chk($('#reg_msg_u_new_name'), $('#u_new_name'))
+        blank_chk($('#u_msg_new_name'), $('#u_new_name'))
         if (!reg_email.test(new_email.val())) {
             set_message('올바른 이메일의 형식이 아닙니다', 'new_email')
         }
-        blank_chk($('#reg_msg_new_email'), $('#new_email'))
+        blank_chk($('#u_msg_new_email'), $('#new_email'));
     }
     
 }
@@ -49,12 +72,17 @@ function remove_msg(el){
     
     if(el == 'u_new_name'){
         if (reg_name.test(u_new_name.val())) {
-            $('#reg_msg_u_new_name').text("");
+            $('#u_msg_new_name').text("");
         }
     }
     if(el == 'new_email'){
         if (reg_email.test(new_email.val())) {
-            $('#reg_msg_new_email').text("");
+            $('#u_msg_new_email').text("");
+        }
+    }
+    if(el == 'u_new_phone'){
+        if (reg_phone.test(u_new_phone.val())) {
+            $('#u_msg_new_phone').text("");
         }
     }
 }
@@ -64,15 +92,20 @@ function blank_chk(msg, txt) {
     }
 }
 function set_message(msg, val) {
-    $('#reg_msg_' + val).text(""); //msg 넣어주기 위함
-    $('#reg_msg_' + val).text(msg); //msg 넣어주기 위함
+    $('#u_msg_' + val).text(""); //msg 넣어주기 위함
+    $('#u_msg_' + val).text(msg); //msg 넣어주기 위함
 }
 
 function form_chk(frm) {
 
+    blank_chk($('#u_msg_new_name'),$('#u_new_name'));
+    blank_chk($('#u_msg_new_email'),$('#new_email'));
+    blank_chk($('#u_msg_new_phone'),$('#u_new_phone'));
+
     //아이디 유효성 체크
     if (!reg_name.test(frm.u_new_name.value)) {
-        set_form_message('이름은 한글 또는 영문만 입력할 수 있습니다.', frm.u_new_name, 'u_new_name')
+        // blank_chk($('#u_msg_new_name'),$('#u_new_name'));
+        set_form_message('이름은 한글 또는 영문만 입력할 수 있습니다.', frm.u_new_name, 'new_name')
         console.log(frm.u_new_name.value);
         return false;
     }
@@ -82,7 +115,8 @@ function form_chk(frm) {
         return false;
     }
     if (!reg_phone.test(frm.u_new_phone.value)) {
-        set_form_message('올바른 전화번호의 형식이 아닙니다', frm.u_new_phone, 'u_new_phone')
+        
+        set_form_message('올바른 전화번호의 형식이 아닙니다', frm.u_new_phone, 'new_phone')
         console.log(frm.u_new_phone.value);
         return false;
     }
@@ -96,17 +130,12 @@ function form_chk(frm) {
 }
 
 function set_form_message(msg, e, val) {
-    $('#reg_msg_' + val).text(""); //msg 넣어주기 위함
-    $('#reg_msg_' + val).text(msg); //msg 넣어주기 위함
+    $('#u_msg_' + val).text(""); //msg 넣어주기 위함
+    $('#u_msg_' + val).text(msg); //msg 넣어주기 위함
 
     if (e) {
         //해당 요소로 focus
         e.select();
-
     }
-
 }
-$(document).on('click','input[name="pormo_btn"]',function(){
-    console.log("된다")
-})
 

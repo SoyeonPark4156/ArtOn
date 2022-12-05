@@ -20,8 +20,10 @@ function focus_chk(type) {
 
     if (type == "u_new_name") {
        
+        remove_msg('u_new_name');
         remove_msg('new_email');
         remove_msg('u_new_phone');
+        blank_chk($('#u_msg_new_name'), $('#u_new_name'))
 
         if (!reg_email.test(new_email.val())) {
             set_message('올바른 이메일의 형식이 아닙니다', 'new_email')
@@ -32,7 +34,6 @@ function focus_chk(type) {
             set_message('올바른 전화번호의 형식이 아닙니다','new_phone')
         }
         blank_chk($('#u_msg_new_phone'),$('#u_new_phone'));
-        
     }
 
     if (type == "new_email") {
@@ -49,7 +50,6 @@ function focus_chk(type) {
             set_message('올바른 전화번호의 형식이 아닙니다','new_phone')
         }
         blank_chk($('#u_msg_new_phone'),$('#u_new_phone'));
-        
     }
     else if (type == "u_new_phone") {
         
@@ -97,11 +97,6 @@ function set_message(msg, val) {
 }
 
 function form_chk(frm) {
-
-    blank_chk($('#u_msg_new_name'),$('#u_new_name'));
-    blank_chk($('#u_msg_new_email'),$('#new_email'));
-    blank_chk($('#u_msg_new_phone'),$('#u_new_phone'));
-
     //아이디 유효성 체크
     if (!reg_name.test(frm.u_new_name.value)) {
         // blank_chk($('#u_msg_new_name'),$('#u_new_name'));

@@ -73,7 +73,7 @@ input[type="tel"]{
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    margin: 20px;
+    margin: 20px 0;
     background-color: #2b8860;
     color:#fff;
     border: none;

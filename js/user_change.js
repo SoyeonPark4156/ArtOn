@@ -120,7 +120,7 @@ function form_chk(frm) {
         return false;
     }
     else {
-        alert("회원가입이 완료되었습니다");
+        alert("회원정보 수정이 완료되었습니다");
     }
 }
 

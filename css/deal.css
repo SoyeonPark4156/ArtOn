@@ -1,10 +1,3 @@
-body{margin: 0%;}
-ul{list-style: none; margin: 0; padding: 0%;}
-a{text-decoration: none; color: inherit;}
-.contents_area{
-    width: 1200px;
-    margin: 0 auto;
-}
 
 /* *****************************공연제목***************************** */
 .title_section{
@@ -19,7 +12,6 @@ a{text-decoration: none; color: inherit;}
 }
 .item_txt{
     font-size: 17px;
-    
 }
 .item_date{
     padding: 0 15px 0 5px;
@@ -47,18 +39,20 @@ a{text-decoration: none; color: inherit;}
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* height:700px; */
+    gap: 40px;
     margin-top: 40px;
     border-bottom: 1px solid #aaa;
 }
-.img_box{
-    width: 430px;
-    height: 600px;
+.poster_img{
+    /* width: 430px;
+    height: 600px; */
+    width: 100%;
     position: relative;
 }
-.img_box > img{
-    width: 430px;
-    height: 600px;
+.poster_img > img{
+    /* width: 430px;
+    height: 600px; */
+    width: 100%;
 }
 /*좋아요*/
 .like_box{
@@ -85,7 +79,7 @@ a{text-decoration: none; color: inherit;}
 }
 /*오른쪽 부분(공연 정보)*/
 .info_box{
-    width: 600px;
+    width: 50%;
     padding: 10px 0;
     box-sizing: border-box;
 }
@@ -112,53 +106,45 @@ a{text-decoration: none; color: inherit;}
 /* *****************************예매하기***************************** */
 .booking_section{
     width: 90%;
-    height: 300px;
     margin: 80px auto;
-
     border: 2px solid #008049;
-    background-color: #fafafa;;
-    
+
+    background-color: #fafafa;
+
 }
 .booking_process{
     width: 100%;
-    height: 50px;
+    /* height: 50px; */
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* background-color: #fcffcb; */
-    background-color: #fff;
+    
+    background-color: #fafafa;
+}
+.option_choice_sec{
+    width: calc(100% / 3);
+    height: 100%;
 }
 .choice_title{
-    width: calc(100% / 3);
+    width: 100%;
     height: 100%;
     text-align: center;
     line-height: 50px;
     font-size: 20px;
     font-weight: 900;
-
-}
-.option_choice_sec{
-    width: 100%;
-    height: 200px;
-    display: flex;
+    background-color: #fff;
 }
 .option_box{
-    width: calc(100% / 3);
-    border-right: 1px solid #ddd;
+    width: 100%;
     text-align: center;
+    border-right: 1px solid #aaa;
 }
-.option_box:nth-child(3){
-    border: none;
-}
+.booking_process .option_choice_sec:nth-of-type(3) .option_box{border-right: none;}
 .choice_btn{
-    width: 250px;
+    width: 70%;
     height: 40px;
     display: block;
     background: #ddd;
     color: rgb(99, 96, 96);
-    margin: 20px auto;
-    
+    margin: 30px auto;
     line-height: 40px;
     font-size: 20px;
     font-weight: 600;
@@ -168,43 +154,43 @@ a{text-decoration: none; color: inherit;}
     background: #fff;
     border: 1px solid #008049;
     color:#22974a;
+    cursor: pointer;
 }
 .btn_chk{
     background: #008049;
     color: #fcffcb;
 }
 .show_time{
-    display: none;
+    visibility: hidden;
 }
 .seat_ment{
-    margin-top: 30px;
+    margin: 40px;
     color: #333;
+    text-align: center;
 }
 .seat_stock_box{
-    width: 280px;
-    height: 100px;
+    width: 90%;
+    height: 90%;
     position: relative;
     left: 50%;
-    transform: translate(-50%, 20%);
-    /* border: 2px solid #ffc30e; */
+    transform: translate(-50%,30%);
     background-color: #fff;
     text-align: left;
-
     display: none;
+    box-sizing: border-box;
 }
-
 .booking_btn_sec{
     width: 100%;
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #fff;
+    padding: 20px 0;
 }
 .booking_btn{
     width: 300px;
-    height: 40px;
-
+    height: 50px;
+    cursor: pointer;
     background-color: #008049;
     color:#fcffcb;
     border: none;
@@ -214,7 +200,6 @@ a{text-decoration: none; color: inherit;}
 .booking_btn:hover{
     background-color: #2f835f;
 }
-
 /* *****************************탭메뉴***************************** */
 .datail_info_section{
     width: 100%;
@@ -237,13 +222,30 @@ a{text-decoration: none; color: inherit;}
     text-align: center;
     position: relative;
     box-sizing: border-box;
-}
-.tab_border_bot{
- 
-    border-bottom: 5px solid #008049;
+    cursor: pointer;
 }
 /* 마우스 호버시 밑줄 왼쪽에서 오른쪽 */
-.tab_title::after{
+.tab_title span{
+    display: block;
+    background: #008049;
+    width: 0;
+    height: 5px;
+    position: absolute; 
+    top: 76px;
+    /* bottom: 0; */
+    left: 0;
+}
+.tab_title:hover{
+    cursor: pointer;
+    color:#008049!important;;
+}
+.tab_title:hover span{
+    transition: all 0.3S;
+    width: 100% !important;
+    /* margin: 0 30px; */
+}
+
+/* .tab_title::after{
     content: "";
     position: absolute;
     left: 0;
@@ -255,11 +257,10 @@ a{text-decoration: none; color: inherit;}
 .tab_title:hover::after{
     transition: all .5s;
     width: 100%;
-}
+} */
 .tab_content{
     display: none;
     height: auto;
-
     text-align: center;
 }
 .tab_current{
@@ -271,11 +272,9 @@ a{text-decoration: none; color: inherit;}
     top:0;
     left: 50%;
     transform: translateX(-50%);
-
     z-index: 10;
     width: 1200px;   
 }
-
 /* **********************************공연 상세 정보 탭 바디*********************** */
 .btn_gotop{
     width: 70px;
@@ -302,9 +301,9 @@ a{text-decoration: none; color: inherit;}
     border-collapse: collapse;
     width: 960px;
     margin: 50px auto;
-
 }
 .table_title{
+    width: 20%;
     padding: 15px 0 ;
     background: #fcffcb;
     font-size: 20px;
@@ -312,6 +311,7 @@ a{text-decoration: none; color: inherit;}
     border:1px solid #ddd;
 }
 .table_content{
+    /* width: 30%; */
     text-align: left;
     padding: 10px 10px 10px 20px;
     font-size: 13px;
@@ -319,6 +319,8 @@ a{text-decoration: none; color: inherit;}
     line-height: 25px;
     border:1px solid #ddd;
 }
+.tb_left{width: 30%;}
+.tb_right{width: 30%;}
 .detail_info_table{
     width: 600px;
     text-align: center;
@@ -343,9 +345,9 @@ a{text-decoration: none; color: inherit;}
 /* **********************************리뷰 탭*********************** */
 .review_area{
     width: 100%;
-    height: 230px;
     margin: 30px 0;
     border: 3px solid #008049;
+    box-sizing: border-box;
 }
 .left_line{
     width: 90%;
@@ -363,44 +365,44 @@ a{text-decoration: none; color: inherit;}
     display: flex;
     flex-direction: row-reverse;
     font-size: 30px;
-    justify-content:space-around;
+    justify-content: space-around;
     padding: 1px;
-  }
-  .star_rating input {
+}
+.star_rating input {
     display: none;
-  }
-  .star_rating label {
+}
+
+.star_rating label {
     color: #ccc;
     cursor: pointer;
-  }
-  
-  .star_rating :checked ~ label {
-    color: #ffc30e;
-  }
-  .star_rating label:hover,
-  .star_rating label:hover ~ label {
-    color: #ffc30e90; 
-    /* 호버시 색깔 연하게 하다가 클릭시 진하게 바꾸는건 나중에....! */
-  }
+}
 
-  .rating_score{
+.star_rating :checked~label {
+    color: #ffc30e;
+}
+
+.star_rating label:hover,
+.star_rating label:hover~label {
+    color: #ffc30e90;
+}
+.rating_score {
     font-size: 18px;
     font-weight: 600;
     color: #376948;
-  }
-
-  /*리뷰 작성 칸!!!!*/
-  .review_upload_area{
+}
+/*리뷰 작성 칸!!!!*/
+.review_upload_area {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  .review_content_area{
+    margin-bottom: 30px;
+}
+.review_content_area {
     width: 80%;
-    height: 130px;
+    height: 100%;
     background-color: #fafafa;
-  }
-  #review_content{
+}
+#review_content {
     width: 100%;
     height: 100px;
     resize: none;
@@ -411,15 +413,15 @@ a{text-decoration: none; color: inherit;}
     font-size: 16px;
     font-weight: bold;
     background-color: #fafafa;
-  } 
-  .text_counter_area{
+}
+.text_counter_area {
     width: 100%;
     height: 20px;
     text-align: right;
     padding-right: 10px;
     box-sizing: border-box;
-  }
-  #btn_submit_review{
+}
+#btn_submit_review {
     width: 180px;
     height: 50px;
     background-color: #008049;
@@ -427,13 +429,13 @@ a{text-decoration: none; color: inherit;}
     font-size: 20px;
     font-weight: 900;
     border: none;
-  } 
-   /*리뷰 리스트!!!*/
-
-   .review_list_area{
+    cursor: pointer;
+}
+/*리뷰 리스트!!!*/
+.review_list_area {
     width: 100%;
-   }
-   .rv_list_top{
+}
+.rv_list_top {
     width: 100%;
     height: 50px;
     display: flex;
@@ -442,94 +444,93 @@ a{text-decoration: none; color: inherit;}
     font-size: 18px;
     font-weight: 900;
     border-bottom: 2px solid #008049;
-   }
-   .rv_count_area{
+}
+.rv_count_area {
     display: flex;
-   } 
-   .rv_sort_area{
+}
+.rv_sort_area {
     display: flex;
-   } 
-   .rv_sorting{
+}
+.rv_sorting {
     padding: 0 5px;
-   }
-   .rv_sorting:hover{
-    color:#22974a;
-   }
-   .rv_list_box{
+}
+.rv_sorting:hover {
+    color: #22974a;
+}
+.rv_list_box {
     width: 100%;
-    height: 100%; /* 여기 heigth 값은 리뷰 내용 들어가게 되면 빼야할듯? 리뷰 글자수에 따라 동적으로하게 */
+    height: 100%;
+    /* 여기 heigth 값은 리뷰 내용 들어가게 되면 빼야할듯? 리뷰 글자수에 따라 동적으로하게 */
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #aaa;
     font-size: 15px;
-   }
-   .rv_user_id{
-    width: 150px;
+}
+.rv_user_id {
+    width: 15%;
     align-self: center;
-   }
-   .rv_uploaded_box{
-    width: 850px;
+}
+.rv_uploaded_box {
+    width: 70%;
     max-height: 155px;
     text-align: left;
-    gap:5px;
+    gap: 5px;
     word-break: break-all;
-   }
-   .rv_uploaded{
+}
+.rv_uploaded {
     width: 100%;
     padding: 5px 0;
-   }
-   #rv_upload_date{
+}
+.rv_upload_date {
     font-size: 12px;
-   }
-   .rv_right_box{
-    width: 100px;
+}
+.rv_right_box {
+    width: 15%;
     position: relative;
     padding: 5px;
-   }
-   .rv_star_rating{
+}
+.rv_star_rating {
     width: 120px;
     height: 30px;
     position: absolute;
     top: 0;
     right: 0;
-   }
-   .star0{background: url(../img/star_0.jpg) no-repeat center / contain;}
-   .star1{background: url(../img/star_1.jpg) no-repeat center / contain;}
-   .star2{background: url(../img/star_2.jpg) no-repeat center / contain;}
-   .star3{background: url(../img/star_3.jpg) no-repeat center / contain;}
-   .star4{background: url(../img/star_4.jpg) no-repeat center / contain;}
-   .star5{background: url(../img/star_5.jpg) no-repeat center / contain;}
-
-   .rv_modify_delete{
+}
+.star0 {background: url(../img/star_0.jpg) no-repeat center / contain;}
+.star1 {background: url(../img/star_1.jpg) no-repeat center / contain;}
+.star2 {background: url(../img/star_2.jpg) no-repeat center / contain;}
+.star3 {background: url(../img/star_3.jpg) no-repeat center / contain;}
+.star4 {background: url(../img/star_4.jpg) no-repeat center / contain;}
+.star5 {background: url(../img/star_5.jpg) no-repeat center / contain;}
+.rv_modify_delete {
     position: absolute;
     bottom: 0;
     right: 0;
     display: flex;
     gap: 5px;
     font-size: 15px;
-   }
-   .rv_modify_btn:hover,
-   .rv_delete_btn:hover{
+}
+.rv_modify_btn:hover,
+.rv_delete_btn:hover {
     color: #008049;
-   }
-
-   /*리뷰 수정하는 부분은 평소엔 display:none 이다가 "수정"버튼 누르면 block으로 */
-   .rv_modify_box{
+    cursor: pointer;
+}
+/*리뷰 수정하는 부분은 평소엔 display:none 이다가 "수정"버튼 누르면 block으로 */
+.rv_modify_box {
     display: none;
-   }
-
-   .rv_modify{
+}
+.rv_modify {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap:10px;
     align-items: center;
     background: #fcffcb;
-    
-   }
-   .rv_update_content_area{
-    width: 850px;
-   }
-   .rv_update_content{
+}
+.rv_update_content_area {
+    width: 100%;
+}
+.rv_update_content {
     width: 100%;
     resize: none;
     outline: none;
@@ -537,14 +538,12 @@ a{text-decoration: none; color: inherit;}
     margin: 5px 0;
     box-sizing: border-box;
     background-color: #fff;
-    
-   }
-   .rv_update_undo{
-    width: 150px;
+}
+.rv_update_undo {
     display: flex;
-    gap: 10px;
-   }
-   .rv_btns{
+    gap: 5px;
+}
+.rv_btns {
     width: 60px;
     height: 30px;
     background-color: rgb(82, 81, 81);
@@ -552,12 +551,11 @@ a{text-decoration: none; color: inherit;}
     font-weight: 900;
     border: none;
     border-radius: 5px;
-   }
-   .rv_btns:hover{
+}
+.rv_btns:hover {
     background-color: #008049;
     color: #fcffcb;
-   }
-
+}
 /*페이지네이션 파트!!!!!!!!!!!*/
 .pagination{
     margin: 30px 0;
@@ -567,16 +565,13 @@ a{text-decoration: none; color: inherit;}
     justify-content: center;
     align-items: center;
 }
-   
-
-
 /* **********************************예매/ 취소 안내 탭*********************** */
 .infos{
     margin-top: 80px;
 }
 .infos_box{
     display: flex;
-    margin: 30px 0 ;
+    margin: 30px 10px;
 }
 .infos_title_sec{
     width: 20%;
@@ -608,11 +603,194 @@ a{text-decoration: none; color: inherit;}
     border:1px solid #ddd;
 }
 
+@media screen and (max-width:1024px) {
+    .big_title{font-size: 32px;}
+    .btn_gotop{
+        width: 60px;
+        bottom: 0;
+        right: 0;
+    }
+    .tabs{height: 60px;}
+    .tab_title{line-height: 60px;font-size: 20px;}
+    .tab_title span{top:56px;}
+    .item_sec_name{
+        width: 100px;
+        padding: 10px 0;
+    }
+    .item_sec_body{padding: 10px 5px;}
+    .booking_section{
+        width: 100%;
+        margin: 50px 0;
+        box-sizing: border-box;
+    }
+    .seat_stock_box{font-size: 13px;}
+    .booking_btn{width: 200px;}
+    .tab_event{width: 100%; }
+    .long_img_box img{width: 100%;}
+    .review_upload_area {
+        display: block;
+        text-align: center;
+    }
+    .review_content_area {width: 100%;}
+    #btn_submit_review {margin-top: 10px;}
+    .rv_list_box {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .notice_table{
+        width: 100%;
+        margin: 50px auto;
+    }
+    .infos_title_sec{font-size: 25px;}
+}
+@media screen and (max-width:768px) {
+    .tabs{height: 50px;}
+    .tab_title{line-height: 50px;font-size: 18px;}
+    .tab_title span{top:46px;}
+    .big_title{font-size: 28px;}
+    .info_box{
+        width: 100%;
+        padding: 10px 0;
+        box-sizing: border-box;
+    }
+    .booking_section{
+        width: 50%;
+        margin: 40px auto;
+    }
+    .booking_process{display: block;}
+    .option_choice_sec{width: 100%;}
+    .option_box{border: none;}
+    .choice_btn{
+        font-size: 18px;
+        margin: 10px auto;
+    }
+    .seat_stock_box{
+        font-size: 13px;
+        transform: translateX(-50%);
+    }
+    .seat_stock_box span{display: inline-block;}
+    .item_section{
+        flex-direction: column;
+        align-items: center;
+    }
+    .item_txt {font-size: 15px;}
+    .infos_box{flex-direction: column;}
+    .infos_title_sec{
+        width: 100%;
+        text-align: center;
+    }
+    .infos_left_sec{
+        width: 100%;
+        font-size: 13px;
+    }
+    .detail_info_table{
+        width: 100%;
+        text-align: center;
+    } 
+    .rv_star_rating{width: 80px;}   
+}
+@media screen and (max-width:500px){
+    .btn_gotop{width: 40px;}
+    .booking_section{
+        width: 70%;
+        margin: 40px auto;
+    }
+    .booking_btn {
+        width: 200px;
+        height: 40px;
+        font-size: 18px;
+    }
+    .tabs{height: 40px;}
+    .tab_title{line-height: 40px;font-size: 15px;}
+    .tab_title span{top:36px;}
+    .big_title{font-size: 25px;}
+    .small_title{font-size: 20px;}
+    .choice_title{font-size: 16px;}
+    .choice_btn{margin: 5px auto;}
+    .item_txt {font-size: 13px;}
+    .item_sec_name{
+        width: 80px;
+        padding: 10px;
+    }
+    .table_title {
+        width: 10%;
+        padding: 10px 0;
+        font-size: 13px;
+    }
+    .table_content {
+        padding: 10px;
+        font-size: 11px;
+        line-height: 20px;
+    }
+    .rv_list_top{font-size: 16px;}
+    .rv_list_box{font-size: 13px;}
+    .rv_modify_delete{font-size: 13px;}
+    .infos_left_sec{
+        width: 100%;
+        font-size: 11px;
+    }
+    .infos_title_sec{font-size: 17px;}
+}
+@media screen and (max-width:320px){
+    #wrap{min-width: 320px;}
+    .tabs{min-width: 320px;}
+    .item_section{gap:0}
+    .item_txt span{display: inline-block;}
+    .item_date{padding: 0 15px 0 0;}
+    .item_date::after{display: none;}
+    .like_box{font-size: 18px;}
+    .like_box img{width: 25px;}
+    .big_title{font-size: 20px;}
+    
+    .booking_btn,
+    #btn_submit_review{
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+    }
 
+    .item_txt,
+    #review_content,
+    .rv_list_box,
+    .rv_modify_delete{font-size: 13px;}
 
+    .small_title,
+    .rating_score,
+    .rv_list_top,
+    .infos_title_sec{font-size: 15px;}
 
-
-
-
+    .item_sec_name{width: 70px;}
+    .choice_title{
+        line-height: 40px;
+        font-size: 15px;
+    }
+    /*리뷰*/
+    .star_rating{font-size: 25px;}
+    .rv_list_box{
+        flex-direction: column;
+        gap:5px;
+    }
+    .rv_user_id{
+        width: 100%;
+        text-align: left;
+        font-size: 13px;
+    }
+    .rv_uploaded_box{width: 100%;}
+    .rv_right_box{
+        width: 100%;
+        text-align: right;
+    }
+    .rv_modify_delete div{display: inline;}
+    .rv_upload_date{display: none;}
+    .rv_star_rating{display: none;}
+    .rv_modify{
+        flex-direction: column;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    .rv_update_content_area{width: 100%;}
+    .rv_update_undo{justify-content: center;}
+    .rv_btns {width: 40px;height: 25px;}
+}
 
 

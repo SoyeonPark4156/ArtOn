@@ -244,7 +244,7 @@ $(document).ready(function(){
 
     //리뷰리스트에 리뷰 10개 박아넣기
     for(let i = 0; i < 5; i++){
-        let tmp_content = "어쩌구 저쩌구 dddddd"+i;
+        let tmp_content = "좋은공연 추천합니다!"+i;
         let tmp_star_rate = 5;
         input_rv(tmp_content, tmp_star_rate);
     }
